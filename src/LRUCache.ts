@@ -57,25 +57,25 @@ export class LRUCache<K, V> {
     }
   }
 
-  moveToHead(node: DLinkedNode<K, V>) {
+  private moveToHead(node: DLinkedNode<K, V>) {
     this.removeNode(node)
     this.addToHead(node)
   }
 
-  addToHead(node: DLinkedNode<K, V>) {
+  private addToHead(node: DLinkedNode<K, V>) {
     node.prev = this.head
     node.next = this.head.next
     this.head.next.prev = node
     this.head.next = node
   }
 
-  removeTail() {
+  private removeTail() {
     const node = this.tail.prev
     this.removeNode(node)
     return node
   }
 
-  removeNode(node: DLinkedNode<K, V>) {
+  private removeNode(node: DLinkedNode<K, V>) {
     node.prev.next = node.next
     node.next.prev = node.prev
   }
