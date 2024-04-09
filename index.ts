@@ -1,2 +1,2 @@
-export { maxSizeArray } from "./src/maxSizeArray.ts"
+export { maxSizeArray } from "./src/LRUCache.ts"
 
